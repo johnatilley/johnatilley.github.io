@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I'm starting a youtube Garden journal
+title: I'm starting a Youtube Garden journal
 ---
 
 My partner and I recently moved house and it comes with an amazing long garden. I've always been into gardening and now is the perfect opportunity to take it to the next level.
