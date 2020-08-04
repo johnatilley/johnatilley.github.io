@@ -10,7 +10,7 @@ Since graduating university I have nearly a decade of experience in industry wor
 
 I'm always looking to broaden my skills and have never felt confined to a specific language. Exercising my capacity to adapt to new tasks is important to me. This industry moves too fast to stand still.
 
-I consider myself to be a full stack web developer. To me being full stack isn't just know how to spin up a server and manage a database. It extends beyond serving up web pages using a framework. It requires deep knowledge of frontend technologies but more impotantly it means to go beyond and develop a taste for good astetics, understand graphic design concepts. It involves knowing how media is created, even delving into video editing and drawing! The full media stack.
+I consider myself to be a full stack web developer. To me being full stack isn't just knowing how to spin up a server and manage a database. It extends beyond serving up web pages using a framework. It requires deep knowledge of frontend technologies but more impotantly it means to go beyond and develop a taste for good astetics, understand graphic design concepts. It involves knowing how media is created, even delving into video and image editing! The full media stack.
 
 ### More Information
 
