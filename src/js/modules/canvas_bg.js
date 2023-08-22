@@ -31,7 +31,7 @@ var pointSize = 3; // The base size for the point circles
 var randomTriangles = true; // Determines if the grid looks chaotic or orderly
 var drawTriangles = true; // Determines if the lines are drawn
 var randomPointSize = false; // Detmines if the circle sizes are random or uniform
-var drawPoints = true; // Determines if the circles are drawn
+var drawPoints = false; // Determines if the circles are drawn
 
 // Functional variables
 var canvas;
