@@ -1,0 +1,29 @@
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="/">
+                JOHN TILLEY
+            </a>
+        </div>
+        <div class="nav-toggle">
+            <button id="js-nav-toggle" class="flex items-center">
+                <span class="mr-2 text-lg uppercase">Menu</span>
+                <i id="js-nav-open" class="nav-open fa-solid fa-bars fa-lg fa-fw"></i>
+                <i id="js-nav-close" class="nav-close fa-solid fa-close fa-lg fa-fw"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-container" id="js-nav-toggle-target">
+        {% set navPages = collections.all | eleventyNavigation %}
+        <ul class="nav-bar">
+            {%- for entry in navPages %}
+            <li class="mr-4 {% if entry.url == page.url %}active underline{% endif %}">
+                <a href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+            {%- endfor %}
+        </ul>
+    </div>
+</nav>
