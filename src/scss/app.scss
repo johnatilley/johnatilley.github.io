@@ -1,8 +1,11 @@
+// Import tailwind settings
+@import "theme/tailwind/screens";
+@import "theme/tailwind/colors";
+@import "theme/tailwind/fonts";
+
 // Settings for the site css
-@import "theme/screens";
+@import "theme/font-face";
 @import "theme/breakpoints";
-@import "theme/colors";
-@import "theme/fonts";
 
 // Site settings
 @import "settings";
@@ -21,12 +24,15 @@
 
 // Atomised elements. These cover html tags such as button, table etc
 @import "components/elements";
+// @import "components/accordion";
+// @import "components/buttons";
+// @import "components/hamburger";
+// @import "components/typography";
 
 // Layout components. These cover layout semantic divs such as header, footer, article, etc
-@import "components/layout";
+@import "views/layout";
+@import "views/pageclip";
 
-// Page components. These cover components that are unique to individual pages
-@import "components/pages";
 
 // Putting the tailwind utilities down here means we can use them as overrides for our set styles.
 // Utility classes are best used as small modifiers for the main theme

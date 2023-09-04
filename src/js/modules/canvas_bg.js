@@ -83,7 +83,7 @@ $(document).ready(init);
  ******************/
 function init() {
     // This is the real canvas that is shown to the user
-    $("#site_bg").append('<canvas id="jtCanvas" width="600" height="400"></canvas>');
+    $("#site-bg").append('<canvas id="jtCanvas" width="600" height="400"></canvas>');
     maincanvas = $("#jtCanvas");
     ctxmain = maincanvas.get(0).getContext("2d");
 
@@ -93,7 +93,7 @@ function init() {
     ctx = canvas.getContext("2d");
 
     wrapperPanel = $("#wrapper");
-    containerPanel = $("#site_bg");
+    containerPanel = $("#site-bg");
     canvas.width = maincanvas.width();
     canvas.height = maincanvas.height();
 

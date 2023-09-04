@@ -1,0 +1,154 @@
+/**
+ * You can add an accordion to your html using the markup below
+ *
+ *  <div class="accordion" data-accordion="collapse">
+ *      <div class="accordion-head">
+ *          <h3>Accordion Head</h3>
+ *      </div>
+ *      <div class="accordion-body">
+ *          <p>Content goes here</p>
+ *      </div>
+ *      <div class="accordion-head">
+ *          <h3>Accordion Head</h3>
+ *      </div>
+ *      <div class="accordion-body">
+ *          <p>Content goes here</p>
+ *      </div>
+ *  </div>
+ *
+ * The available breakpoints are found in the $breakpoints array above. This can be overriden with
+ * a custom $breakpoint array.
+ */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    .accordion-row {
+        background-color: $color-white;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+
+        .accordion-toggle {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+
+            h4 {
+                margin: 0;
+                padding-top: 7px;
+                margin-bottom: -11px;
+                font-family: $font-sans;
+                color: $color-dark-gray;
+            }
+
+            .icon {
+                .plus-minus {
+                    display: block;
+                    position: relative;
+                    width: 36px;
+                    height: 36px;
+                    background-color: $color-volt;
+                    border-radius: 50%;
+                    transition: all 0.08s ease-out;
+
+                    &:before,
+                    &:after {
+                        content: " ";
+                        position: absolute;
+                        height: 2px;
+                        width: 16px;
+                        background-color: $color-dark-gray;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -1px;
+                        margin-left: -8px;
+                        transition: all 0.08s ease-out;
+                    }
+
+                    &:after {
+                        transform: rotate(90deg);
+                    }
+                }
+
+                .arrow {
+                    &.up {
+                        display: none;
+                    }
+
+                    &.down {
+                        display: block;
+                    }
+
+                    svg {
+                        display: block;
+                    }
+                }
+            }
+
+            &.open {
+                .icon {
+                    .plus-minus {
+                        background-color: $color-pastel-gray;
+
+                        &:before {
+                            transform: rotate(180deg);
+                        }
+
+                        &:after {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .arrow {
+                        &.up {
+                            display: block;
+                        }
+
+                        &.down {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .accordion-content {
+            display: none;
+            gap: 24px;
+            padding: 0 24px 24px;
+            align-items: flex-end;
+            font-size: 16px;
+            color: $color-dark-gray;
+
+            p {
+                &:last-child {
+                    font-size: 16px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &.accordion-dark {
+        .accordion-row {
+            background-color: $color-dark-gray;
+
+            .accordion-toggle {
+                h4 {
+                    color: $color-white;
+                }
+
+                .accordion-tagline {
+                    color: $color-volt;
+                }
+            }
+
+            .accordion-content {
+                color: $color-white;
+            }
+        }
+    }
+}

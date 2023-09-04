@@ -1,0 +1,134 @@
+button,
+.button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    font-family: $font-sans;
+    display: inline-flex;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: $color-dark-gray;
+    color: $color-white;
+    font-size: 30px;
+    line-height: 1;
+    padding: 20px 15px 10px;
+    grid-gap: 8px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(0px);
+    transition: all 0.1s ease-in-out;
+    border: 0;
+    cursor: pointer;
+
+    // Drawn arrow SVG
+    .button-arrow {
+        transform: translateY(-4px);
+        margin-left: 0px;
+        margin-right: 5px;
+        transition: all 0.1s ease-in-out;
+        border: 0 !important;
+        display: inline;
+    }
+
+    &.button-small {
+        .button-arrow {
+            transform: translateY(-6px);
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.24);
+
+        .button-arrow {
+            margin-left: 5px;
+            margin-right: 0px;
+        }
+    }
+
+    &:active {
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+
+        .button-arrow {
+            margin-left: 4px;
+            margin-right: 1px;
+
+        }
+
+    }
+
+    &.button-white {
+        background: $color-white;
+        color: $color-black;
+
+        .button-arrow,
+        .cross {
+            path {
+                fill: $color-black;
+
+            }
+
+        }
+
+    }
+
+    &.button-stormcloud {
+        background: $color-stormcloud;
+        color: $color-white;
+
+    }
+
+    &.button-dark-gray {
+        background: $color-dark-gray;
+        color: $color-white;
+
+    }
+
+    &.button-volt {
+        background: $color-volt;
+        color: $color-black;
+
+        .button-arrow,
+        .cross {
+            path {
+                fill: $color-black;
+
+            }
+
+        }
+
+    }
+
+    // Had to add a helper here because the text-volt helper class was being overridden by the button-dark-gray class
+    &.button-text-volt {
+        color: $color-volt;
+
+    }
+
+    // Button modifiers
+    &.no-arrow {
+        .button-arrow {
+            display: none;
+        }
+    }
+
+    &.no-shadow {
+        box-shadow: none;
+    }
+
+    &.button-back {
+        flex-direction: row-reverse;
+
+        .button-arrow {
+            transform: translateY(-4px) scaleX(-1);
+            margin-left: 5px;
+            margin-right: 0px;
+        }
+
+        &:hover {
+            .button-arrow {
+                margin-left: 0px;
+                margin-right: 5px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,87 @@
+html,
+body {
+    font-family: $font-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-sans;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    padding-top: 0.625rem;
+
+    @include breakpoint(lg) {
+        font-size: 7.5rem;
+        padding-top: 1rem;
+    }
+}
+
+h2 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    padding-top: 0.75rem;
+
+    @include breakpoint(lg) {
+        font-size: 6rem;
+    }
+}
+
+h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-top: 0.625rem;
+
+    @include breakpoint(lg) {
+        font-size: 4.5rem;
+    }
+}
+
+h4 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-top: 0.438rem;
+
+    @include breakpoint(lg) {
+        font-size: 3.125rem;
+    }
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+
+    @include breakpoint(lg) {
+        font-size: 1.5rem;
+    }
+
+    // Last p-tags shouldn't interfere with padding and create gaps between modules
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+li {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+table {
+    font-family: $font-sans-serif;
+}
