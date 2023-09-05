@@ -131,20 +131,21 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 1rem;
 
         @include breakpoint(md) {
             justify-content: flex-end;
         }
-    }
 
-    .social-link {
-        font-size: 2rem;
-        color: $color-white;
+        .social-link {
+            font-size: 2rem;
+            color: $color-white;
 
-        &:hover {
-            color: $color-spanish-orange;
-            transition: all 0.3s $motion-standard;
-            transform: translateY(-2px);
+            &:hover {
+                color: $color-spanish-orange;
+                transition: all 0.3s $motion-standard;
+                transform: translateY(-2px);
+            }
         }
     }
 }
