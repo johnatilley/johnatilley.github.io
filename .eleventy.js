@@ -6,11 +6,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget("./src/js/");
     eleventyConfig.addWatchTarget("./src/assets/");
 
-    eleventyConfig.addPassthroughCopy({"./src/assets/favicon": "/"});
-    eleventyConfig.addPassthroughCopy({"./src/assets/images": "/images"});
-    eleventyConfig.addPassthroughCopy({"./src/assets/webfonts": "/webfonts"});
-    eleventyConfig.addPassthroughCopy({"./src/assets/css": "/css"});
-    eleventyConfig.addPassthroughCopy({"./src/assets/js": "/js"});
+    eleventyConfig.addPassthroughCopy({"./src/assets/": "/"});
 
     eleventyConfig.setBrowserSyncConfig({
         open: true,
