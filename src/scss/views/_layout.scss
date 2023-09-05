@@ -48,7 +48,7 @@ header {
     color: $color-spanish-orange;
 
     .header-container {
-        @apply container;
+        @apply container px-4;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -107,43 +107,43 @@ header {
 // MAIN
 main {
     flex-grow: 1;
+
+    .main-container {
+        @apply container px-4;
+        margin: 0 auto;
+        padding-block: 2rem;
+    }
 }
 
-.main-container {
-    @apply container;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
 
+// FOOTER
 footer {
     margin-top: auto;
     background-color: $color-stone-900;
-}
 
-.footer-container {
-    @apply container;
-    margin: 0 auto;
-    padding: 2rem;
-}
+    .footer-container {
+        @apply container px-4;
+        margin: 0 auto;
+        padding: 2rem;
+    }
 
-.social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .social-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    @include breakpoint(md) {
-        justify-content: flex-end;
+        @include breakpoint(md) {
+            justify-content: flex-end;
+        }
+    }
+
+    .social-link {
+        font-size: 2rem;
+        color: $color-white;
+
+        &:hover {
+            color: $color-spanish-orange;
+            transform: translateY(-2px);
+        }
     }
 }
-
-.social-link {
-    font-size: 2rem;
-    color: $color-white;
-
-    &:hover {
-        color: $color-spanish-orange;
-        transform: translateY(-2px);
-    }
-}
-
-// Something

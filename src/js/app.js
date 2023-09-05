@@ -22,7 +22,7 @@ $( document ).ready( function () {
 } );
 
 function headerScrolled () {
-    if ( $( this ).scrollTop() > 120 ) {
+    if ( $( this ).scrollTop() >= 60 ) {
         $( "#js-header" ).addClass( "header-scrolled" );
     } else {
         $( "#js-header" ).removeClass( "header-scrolled" );
