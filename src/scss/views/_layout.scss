@@ -143,6 +143,7 @@ footer {
 
         &:hover {
             color: $color-spanish-orange;
+            transition: all 0.3s $motion-standard;
             transform: translateY(-2px);
         }
     }
