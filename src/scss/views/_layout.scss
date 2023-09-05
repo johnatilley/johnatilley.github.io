@@ -29,30 +29,79 @@ body {
 }
 
 // HEADER
+$header-height: 120px;
+$header-height-alt: 60px;
+
+.header-spacer {
+    width: 100%;
+    height: $header-height;
+}
+
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    flex-grow: 0;
+    z-index: 2;
     background-color: $color-charcoal;
     color: $color-spanish-orange;
-    flex-grow: 0;
-    position: relative;
-    z-index: 2;
-}
 
-.header-container {
-    @apply container;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .header-container {
+        @apply container;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $header-height;
+        transition: all 0.3s $motion-standard;
 
-    @include breakpoint(md) {
-        justify-content: space-between;
+        @include breakpoint(md) {
+            justify-content: space-between;
+        }
     }
-}
 
-.header-logo {
-    font-size: 3rem;
-    font-family: $font-rakkas;
+    .header-logo {
+        font-size: 3rem;
+        font-family: $font-rakkas;
+        position: relative;
+        width: 180px;
+        display: block;
+        overflow: hidden;
+        transition: all 0.3s $motion-standard;
+
+        .header-logo-1 {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-logo-2 {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(0%);
+            transition: all 0.3s $motion-enter 0.1s;
+        }
+    }
+
+    &.header-scrolled {
+        .header-container {
+            height: $header-height-alt;
+            transition: all 0.3s $motion-standard 0.1s;
+        }
+
+        .header-logo {
+            width: 90px;
+            transition: all 0.3s $motion-standard 0.1s;
+
+            .header-logo-2 {
+                transform: translateX(-100%);
+                transition: all 0.3s $motion-exit;
+            }
+        }
+    }
 }
 
 // MAIN
@@ -93,5 +142,8 @@ footer {
 
     &:hover {
         color: $color-spanish-orange;
+        transform: translateY(-2px);
     }
 }
+
+// Something

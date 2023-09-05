@@ -1,4 +1,3 @@
-
 $header-color: $color-charcoal;
 $primary-color: $color-indigo-900;
 $secondary-color: $color-purple-800;
@@ -6,4 +5,9 @@ $panel-primary-color: $color-purple-600;
 $panel-secondary-color: $color-purple-300;
 
 // Font awesome
-$fa-font-path: "/assets/webfonts";
+$fa-font-path: "/webfonts";
+
+// Motion
+$motion-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$motion-enter: cubic-bezier(0.0, 0.0, 0.2, 1);
+$motion-exit: cubic-bezier(0.4, 0.0, 1, 1);

@@ -3,11 +3,14 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-    eleventyConfig.addWatchTarget("./src/scss/");
     eleventyConfig.addWatchTarget("./src/js/");
-    eleventyConfig.addWatchTarget("./docs/scss`/");
-    eleventyConfig.addWatchTarget("./docs/js/");
-    eleventyConfig.addPassthroughCopy({"./src/assets": "assets"});
+    eleventyConfig.addWatchTarget("./src/assets/");
+
+    eleventyConfig.addPassthroughCopy({"./src/assets/favicon": "/"});
+    eleventyConfig.addPassthroughCopy({"./src/assets/images": "/images"});
+    eleventyConfig.addPassthroughCopy({"./src/assets/webfonts": "/webfonts"});
+    eleventyConfig.addPassthroughCopy({"./src/assets/css": "/css"});
+    eleventyConfig.addPassthroughCopy({"./src/assets/js": "/js"});
 
     eleventyConfig.setBrowserSyncConfig({
         open: true,

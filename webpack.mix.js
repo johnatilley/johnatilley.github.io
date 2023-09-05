@@ -111,7 +111,7 @@ let mix = require( "laravel-mix" );
 // Then we compile our sass
 mix.sass(
     "src/scss/app.scss",
-    "docs/css",
+    "src/assets/css",
     {
         implementation: require( "sass" ),
         sassOptions: {
