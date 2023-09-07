@@ -64,11 +64,12 @@ header {
     .header-logo {
         font-size: 3rem;
         font-family: $font-rakkas;
+        margin-left: 0;
         position: relative;
         width: 180px;
         display: block;
         overflow: hidden;
-        transition: all 0.3s $motion-standard;
+        transition: width 0.3s $motion-standard, margin-left 0.3s $motion-standard 0.1s;
 
         .header-logo-1 {
             width: 100%;
@@ -94,7 +95,12 @@ header {
 
         .header-logo {
             width: 90px;
-            transition: all 0.3s $motion-standard 0.1s;
+            margin-left: 55px;
+            transition: width 0.3s $motion-standard 0.1s, margin-left 0.3s $motion-standard;
+
+            @include breakpoint(md) {
+                margin-left: 0;
+            }
 
             .header-logo-2 {
                 transform: translateX(-100%);
