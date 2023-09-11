@@ -1,0 +1,22 @@
+---
+layout: "base.njk"
+title: "John Tilley | Services"
+bodyClass: home
+description: John Tilley Web Development Services
+
+eleventyNavigation:
+    key: Services
+    order: 2
+---
+
+<div class="panel">
+    <h1>Services</h1>
+    <p>All the services. So many services.</p>
+</div>
+
+<div class="panel">
+    <pre>
+    {% set navPages = collections.all | eleventyNavigation("Services") %}
+    {{ navPages | dump(2) | safe }}
+    </pre>
+</div>

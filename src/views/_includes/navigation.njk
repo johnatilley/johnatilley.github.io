@@ -1,0 +1,29 @@
+<nav class="nav-container" id="js-nav-toggle-target">
+    {% set navPages = collections.all | eleventyNavigation %}
+    <ul class="nav-menu">
+        {%- for entry in navPages %}
+            <li {% if entry.url == page.url %}class="active underline"{% endif %}>
+                <a href="{{ entry.url }}">{{ entry.title }}</a>
+                {%- if entry.children.length -%}
+                    <div class="nav-submenu-container">
+                        <ul class="nav-submenu">
+                            {%- for child in entry.children %}
+                                <li{% if child.url == page.url %} class="my-active-class"{% endif %}>
+                                    <a href="{{ child.url }}">{{ child.title }}</a>
+                                </li>
+                            {% endfor -%}
+                        </ul>
+                    </div>
+                {%- endif -%}
+            </li>
+        {%- endfor %}
+    </ul>
+
+    <div class="nav-toggle">
+        <button id="js-nav-toggle" class="flex items-center">
+            <span class="mr-2 text-lg uppercase">Menu</span>
+            <i id="js-nav-open" class="nav-open fa-solid fa-bars fa-lg fa-fw"></i>
+            <i id="js-nav-close" class="nav-close fa-solid fa-close fa-lg fa-fw"></i>
+        </button>
+    </div>
+</nav>

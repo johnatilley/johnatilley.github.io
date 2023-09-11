@@ -1,0 +1,101 @@
+$motion-duration: 0.2s;
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include breakpoint(md) {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    >li {
+        position: relative;
+
+        >a {
+            display: block;
+            background-color: $color-charcoal;
+            color: $color-spanish-orange;
+            border-radius: 15px;
+            font-weight: 700;
+            padding: .75rem 1.25rem;
+            white-space: nowrap;
+            transition: all $motion-duration $motion-exit;
+        }
+
+        .nav-submenu-container {
+            @include breakpoint(md) {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                transform-origin: top center;
+                opacity: 0;
+                padding-top: 0;
+                transform: scaleY(0);
+                transition:
+                    opacity $motion-duration $motion-exit,
+                    padding-top $motion-duration $motion-exit,
+                    transform 0s linear $motion-duration;
+            }
+
+            .nav-submenu {
+                @apply shadow-xl;
+                border-radius: 15px;
+                background-color: $color-white;
+                z-index: 1;
+
+                >li {
+                    >a {
+                        background-color: $color-white;
+                        color: $color-spanish-orange;
+                        padding: 1rem 1.5rem;
+                        white-space: nowrap;
+                        display: block;
+                        border-radius: 15px;
+                        transition:
+                            color $motion-duration $motion-exit,
+                            background-color $motion-duration $motion-exit;
+
+                        &:hover {
+                            background-color: $color-spanish-orange;
+                            color: $color-white;
+                            transition:
+                                color $motion-duration $motion-enter,
+                                background-color $motion-duration $motion-enter;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        &:hover {
+            >a {
+                background-color: $color-spanish-orange;
+                color: $color-white;
+                transition: all $motion-duration $motion-enter;
+            }
+
+            .nav-submenu-container {
+                @include breakpoint(md) {
+                    opacity: 1;
+                    padding-top: 1rem;
+                    transform: scaleY(1);
+                    transition:
+                        opacity $motion-duration $motion-exit,
+                        padding-top $motion-duration $motion-exit,
+                        transform 0s linear 0s;
+                }
+            }
+        }
+    }
+}
+
+.nav-toggle {
+    @include breakpoint(md) {
+        display: none;
+    }
+}
