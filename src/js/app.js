@@ -2,14 +2,10 @@
 $( document ).ready( function () {
 
     $( "#js-nav-toggle" ).on( "click", function () {
-        if ( $( "#js-nav-toggle-target" ).is( ":visible" ) ) {
-            $( "#js-nav-toggle-target" ).slideUp( 250, $.bez( [ 0.7, 0, 0.5, 1 ] ) );
-            $( "#js-nav-open" ).show();
-            $( "#js-nav-close" ).hide();
+        if ( $( "#js-nav-toggle-target" ).hasClass( "mobile-nav-open" ) ) {
+            $( "#js-nav-toggle-target" ).removeClass( "mobile-nav-open" );
         } else {
-            $( "#js-nav-toggle-target" ).slideDown( 250, $.bez( [ 0.7, 0, 0.5, 1 ] ) );
-            $( "#js-nav-open" ).hide();
-            $( "#js-nav-close" ).show();
+            $( "#js-nav-toggle-target" ).addClass( "mobile-nav-open" );
         }
     } );
 

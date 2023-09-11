@@ -11,3 +11,10 @@ $fa-font-path: "/webfonts";
 $motion-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
 $motion-enter: cubic-bezier(0.0, 0.0, 0.2, 1);
 $motion-exit: cubic-bezier(0.4, 0.0, 1, 1);
+
+// HEADER
+$header-height: 120px;
+$header-height-alt: 60px;
+
+// Navigation motion duration
+$motion-duration: 0.2s;

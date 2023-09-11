@@ -28,10 +28,6 @@ body {
     flex-direction: column;
 }
 
-// HEADER
-$header-height: 120px;
-$header-height-alt: 60px;
-
 .header-spacer {
     width: 100%;
     height: $header-height;
@@ -43,7 +39,7 @@ header {
     left: 0;
     width: 100%;
     flex-grow: 0;
-    z-index: 2;
+    z-index: 20;
     background-color: $color-charcoal;
     color: $color-spanish-orange;
 
@@ -55,10 +51,7 @@ header {
         justify-content: center;
         height: $header-height;
         transition: all 0.3s $motion-standard;
-
-        @include breakpoint(md) {
-            justify-content: space-between;
-        }
+        justify-content: space-between;
     }
 
     .header-logo {
@@ -95,8 +88,7 @@ header {
 
         .header-logo {
             width: 90px;
-            margin-left: 55px;
-            transition: width 0.3s $motion-standard 0.1s, margin-left 0.3s $motion-standard;
+            transition: width 0.3s $motion-standard 0.1s;
 
             @include breakpoint(md) {
                 margin-left: 0;

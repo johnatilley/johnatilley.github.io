@@ -1,101 +1,152 @@
-$motion-duration: 0.2s;
+.nav-container {
+    .nav-menu {
+        position: fixed;
+        top: $header-height;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        background-color: $color-spanish-orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transition: top 0.3s $motion-standard, bottom $motion-duration $motion-exit;
 
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-
-    @include breakpoint(md) {
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 1rem;
-    }
-
-    >li {
-        position: relative;
-
-        >a {
-            display: block;
-            background-color: $color-charcoal;
-            color: $color-spanish-orange;
-            border-radius: 15px;
-            font-weight: 700;
-            padding: .75rem 1.25rem;
-            white-space: nowrap;
-            transition: all $motion-duration $motion-exit;
+        .header-scrolled & {
+            top: $header-height-alt;
         }
 
-        .nav-submenu-container {
-            @include breakpoint(md) {
-                position: absolute;
-                top: 100%;
-                right: 0;
-                transform-origin: top center;
-                opacity: 0;
-                padding-top: 0;
-                transform: scaleY(0);
-                transition:
-                    opacity $motion-duration $motion-exit,
-                    padding-top $motion-duration $motion-exit,
-                    transform 0s linear $motion-duration;
-            }
-
-            .nav-submenu {
-                @apply shadow-xl;
-                border-radius: 15px;
-                background-color: $color-white;
-                z-index: 1;
-
-                >li {
-                    >a {
-                        background-color: $color-white;
-                        color: $color-spanish-orange;
-                        padding: 1rem 1.5rem;
-                        white-space: nowrap;
-                        display: block;
-                        border-radius: 15px;
-                        transition:
-                            color $motion-duration $motion-exit,
-                            background-color $motion-duration $motion-exit;
-
-                        &:hover {
-                            background-color: $color-spanish-orange;
-                            color: $color-white;
-                            transition:
-                                color $motion-duration $motion-enter,
-                                background-color $motion-duration $motion-enter;
-                        }
-                    }
-                }
-            }
+        @include breakpoint(md) {
+            position: relative;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 1rem;
         }
 
+        >li {
+            position: relative;
 
-        &:hover {
             >a {
-                background-color: $color-spanish-orange;
-                color: $color-white;
-                transition: all $motion-duration $motion-enter;
+                display: block;
+                background-color: $color-charcoal;
+                color: $color-spanish-orange;
+                border-radius: 15px;
+                font-weight: 700;
+                padding: .75rem 1.25rem;
+                white-space: nowrap;
+                transition: all $motion-duration $motion-exit;
             }
 
             .nav-submenu-container {
                 @include breakpoint(md) {
-                    opacity: 1;
-                    padding-top: 1rem;
-                    transform: scaleY(1);
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    transform-origin: top center;
+                    opacity: 0;
+                    padding-top: 0;
+                    transform: scaleY(0);
                     transition:
                         opacity $motion-duration $motion-exit,
                         padding-top $motion-duration $motion-exit,
-                        transform 0s linear 0s;
+                        transform 0s linear $motion-duration;
+                }
+
+                .nav-submenu {
+                    @apply shadow-xl;
+                    border-radius: 15px;
+                    background-color: $color-white;
+                    z-index: 1;
+
+                    >li {
+                        >a {
+                            background-color: $color-white;
+                            color: $color-spanish-orange;
+                            padding: 1rem 1.5rem;
+                            white-space: nowrap;
+                            display: block;
+                            border-radius: 15px;
+                            transition:
+                                color $motion-duration $motion-exit,
+                                background-color $motion-duration $motion-exit;
+
+                            &:hover {
+                                background-color: $color-spanish-orange;
+                                color: $color-white;
+                                transition:
+                                    color $motion-duration $motion-enter,
+                                    background-color $motion-duration $motion-enter;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            &:hover {
+                >a {
+                    background-color: $color-spanish-orange;
+                    color: $color-white;
+                    transition: all $motion-duration $motion-enter;
+                }
+
+                .nav-submenu-container {
+                    @include breakpoint(md) {
+                        opacity: 1;
+                        padding-top: 1rem;
+                        transform: scaleY(1);
+                        transition:
+                            opacity $motion-duration $motion-exit,
+                            padding-top $motion-duration $motion-exit,
+                            transform 0s linear 0s;
+                    }
                 }
             }
         }
     }
-}
 
-.nav-toggle {
-    @include breakpoint(md) {
-        display: none;
+    .nav-toggle {
+        @include breakpoint(md) {
+            display: none;
+        }
+
+        .nav-toggle-icons {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .nav-open-icon {
+                opacity: 1;
+                transition: opacity $motion-duration $motion-standard;
+            }
+
+            .nav-close-icon {
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                transition: opacity $motion-duration $motion-standard;
+            }
+        }
+    }
+
+    &.mobile-nav-open {
+        .nav-toggle {
+            .nav-toggle-icons {
+                .nav-open-icon {
+                    opacity: 0;
+                }
+
+                .nav-close-icon {
+                    opacity: 1;
+                }
+            }
+        }
+
+
+        .nav-menu {
+            bottom: 0;
+            transition: bottom $motion-duration $motion-enter;
+        }
     }
 }

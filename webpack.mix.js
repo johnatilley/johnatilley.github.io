@@ -108,6 +108,13 @@ StyleDictionary.extend( {
 // webpack.mix.js
 let mix = require( "laravel-mix" );
 
+mix.webpackConfig({
+    stats: {
+        children: true,
+        loggingDebug: ["sass-loader"],
+    },
+});
+
 // Then we compile our sass
 mix.sass(
     "src/scss/app.scss",
