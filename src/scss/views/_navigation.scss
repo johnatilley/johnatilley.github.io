@@ -1,5 +1,6 @@
 .nav-container {
-    .nav-menu {
+
+    .nav-menu-wrapper {
         position: fixed;
         top: $header-height;
         bottom: 100%;
@@ -7,99 +8,132 @@
         right: 0;
         overflow: auto;
         background-color: $color-spanish-orange;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
         transition: top 0.3s $motion-standard, bottom $motion-duration $motion-exit;
 
-        .header-scrolled & {
-            top: $header-height-alt;
-        }
-
         @include breakpoint(md) {
-            position: relative;
-            flex-direction: row;
-            justify-content: flex-end;
-            gap: 1rem;
+            position: static;
+            background-color: transparent;
+            overflow: visible;
         }
 
-        >li {
-            position: relative;
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
 
-            >a {
-                display: block;
-                background-color: $color-charcoal;
-                color: $color-spanish-orange;
-                border-radius: 15px;
-                font-weight: 700;
-                padding: .75rem 1.25rem;
-                white-space: nowrap;
-                transition: all $motion-duration $motion-exit;
+            @include breakpoint(sm down) {
+                @apply container px-4;
+                margin: 0 auto;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
             }
 
-            .nav-submenu-container {
-                @include breakpoint(md) {
-                    position: absolute;
-                    top: 100%;
-                    right: 0;
-                    transform-origin: top center;
-                    opacity: 0;
-                    padding-top: 0;
-                    transform: scaleY(0);
-                    transition:
-                        opacity $motion-duration $motion-exit,
-                        padding-top $motion-duration $motion-exit,
-                        transform 0s linear $motion-duration;
-                }
-
-                .nav-submenu {
-                    @apply shadow-xl;
-                    border-radius: 15px;
-                    background-color: $color-white;
-                    z-index: 1;
-
-                    >li {
-                        >a {
-                            background-color: $color-white;
-                            color: $color-spanish-orange;
-                            padding: 1rem 1.5rem;
-                            white-space: nowrap;
-                            display: block;
-                            border-radius: 15px;
-                            transition:
-                                color $motion-duration $motion-exit,
-                                background-color $motion-duration $motion-exit;
-
-                            &:hover {
-                                background-color: $color-spanish-orange;
-                                color: $color-white;
-                                transition:
-                                    color $motion-duration $motion-enter,
-                                    background-color $motion-duration $motion-enter;
-                            }
-                        }
-                    }
-                }
+            @include breakpoint(md) {
+                position: relative;
+                flex-direction: row;
+                justify-content: flex-end;
+                gap: 1rem;
             }
 
+            >li {
+                position: relative;
 
-            &:hover {
                 >a {
-                    background-color: $color-spanish-orange;
                     color: $color-white;
-                    transition: all $motion-duration $motion-enter;
+                    font-weight: 700;
+                    font-size: 2rem;
+
+                    @include breakpoint(md) {
+                        display: block;
+                        background-color: $color-charcoal;
+                        color: $color-spanish-orange;
+                        border-radius: 15px;
+                        font-size: 1rem;
+                        padding: .75rem 1.25rem;
+                        white-space: nowrap;
+                        transition: all $motion-duration $motion-exit;
+                    }
                 }
 
                 .nav-submenu-container {
                     @include breakpoint(md) {
-                        opacity: 1;
-                        padding-top: 1rem;
-                        transform: scaleY(1);
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        transform-origin: top center;
+                        opacity: 0;
+                        padding-top: 0;
+                        transform: scaleY(0);
                         transition:
                             opacity $motion-duration $motion-exit,
                             padding-top $motion-duration $motion-exit,
-                            transform 0s linear 0s;
+                            transform 0s linear $motion-duration;
+                    }
+
+                    .nav-submenu {
+
+                        @include breakpoint(md) {
+                            z-index: 1;
+                            @apply shadow-xl;
+                            border-radius: 15px;
+                            background-color: $color-white;
+                        }
+
+                        >li {
+                            >a {
+                                display: block;
+                                color: $color-white;
+                                margin-bottom: 0.5rem;
+
+                                @include breakpoint(md) {
+                                    background-color: $color-white;
+                                    color: $color-spanish-orange;
+                                    padding: 1rem 1.5rem;
+                                    margin-bottom: 0;
+                                    white-space: nowrap;
+                                    border-radius: 15px;
+                                    transition:
+                                        color $motion-duration $motion-exit,
+                                        background-color $motion-duration $motion-exit;
+
+                                    &:hover {
+                                        background-color: $color-spanish-orange;
+                                        color: $color-white;
+                                        transition:
+                                            color $motion-duration $motion-enter,
+                                            background-color $motion-duration $motion-enter;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.active {
+                    >a {
+                        color: $color-white;
+                        transition: all $motion-duration $motion-enter;
+                    }
+                }
+
+                &:hover {
+                    >a {
+                        background-color: $color-spanish-orange;
+                        color: $color-white;
+                        transition: all $motion-duration $motion-enter;
+                    }
+
+                    .nav-submenu-container {
+                        @include breakpoint(md) {
+                            opacity: 1;
+                            padding-top: 1rem;
+                            transform: scaleY(1);
+                            transition:
+                                opacity $motion-duration $motion-exit,
+                                padding-top $motion-duration $motion-exit,
+                                transform 0s linear 0s;
+                        }
                     }
                 }
             }
@@ -144,9 +178,14 @@
         }
 
 
-        .nav-menu {
+        .nav-menu-wrapper {
             bottom: 0;
-            transition: bottom $motion-duration $motion-enter;
+            transition: top 0.3s $motion-standard, bottom $motion-duration $motion-exit;
+
+            .header-scrolled & {
+                top: $header-height-alt;
+                transition: top 0.3s $motion-standard 0.1s, bottom $motion-duration $motion-exit;
+            }
         }
     }
 }

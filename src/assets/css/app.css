@@ -10832,7 +10832,7 @@ video {
   margin-bottom: 2rem;
 }
 
-.nav-container .nav-menu {
+.nav-container .nav-menu-wrapper {
   position: fixed;
   top: 120px;
   bottom: 100%;
@@ -10840,38 +10840,86 @@ video {
   right: 0;
   overflow: auto;
   background-color: #eb6d16;
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+@media (min-width: 768px) {
+  .nav-container .nav-menu-wrapper {
+    position: static;
+    background-color: transparent;
+    overflow: visible;
+  }
+}
+.nav-container .nav-menu-wrapper .nav-menu {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.2s cubic-bezier(0.4, 0, 1, 1);
 }
-.header-scrolled .nav-container .nav-menu {
-  top: 60px;
+@media (max-width: 767px) {
+  .nav-container .nav-menu-wrapper .nav-menu {
+    width: 100%;
+  }
+  @media (min-width: 640px) {
+    .nav-container .nav-menu-wrapper .nav-menu {
+      max-width: 640px;
+    }
+  }
+  @media (min-width: 768px) {
+    .nav-container .nav-menu-wrapper .nav-menu {
+      max-width: 768px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .nav-container .nav-menu-wrapper .nav-menu {
+      max-width: 1024px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .nav-container .nav-menu-wrapper .nav-menu {
+      max-width: 1280px;
+    }
+  }
+  @media (min-width: 1536px) {
+    .nav-container .nav-menu-wrapper .nav-menu {
+      max-width: 1536px;
+    }
+  }
+  .nav-container .nav-menu-wrapper .nav-menu {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 @media (min-width: 768px) {
-  .nav-container .nav-menu {
+  .nav-container .nav-menu-wrapper .nav-menu {
     position: relative;
     flex-direction: row;
     justify-content: flex-end;
     gap: 1rem;
   }
 }
-.nav-container .nav-menu > li {
+.nav-container .nav-menu-wrapper .nav-menu > li {
   position: relative;
 }
-.nav-container .nav-menu > li > a {
-  display: block;
-  background-color: #1f3a4c;
-  color: #eb6d16;
-  border-radius: 15px;
+.nav-container .nav-menu-wrapper .nav-menu > li > a {
+  color: #ffffff;
   font-weight: 700;
-  padding: 0.75rem 1.25rem;
-  white-space: nowrap;
-  transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
+  font-size: 2rem;
 }
 @media (min-width: 768px) {
-  .nav-container .nav-menu > li .nav-submenu-container {
+  .nav-container .nav-menu-wrapper .nav-menu > li > a {
+    display: block;
+    background-color: #1f3a4c;
+    color: #eb6d16;
+    border-radius: 15px;
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    white-space: nowrap;
+    transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
+  }
+  .nav-container .nav-menu-wrapper .nav-menu > li .nav-submenu-container {
     position: absolute;
     top: 100%;
     right: 0;
@@ -10881,36 +10929,47 @@ video {
     transform: scaleY(0);
     transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1), padding-top 0.2s cubic-bezier(0.4, 0, 1, 1), transform 0s linear 0.2s;
   }
+  .nav-container .nav-menu-wrapper .nav-menu > li .nav-submenu-container .nav-submenu {
+    z-index: 1;
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 15px;
+    background-color: #ffffff;
+  }
 }
-.nav-container .nav-menu > li .nav-submenu-container .nav-submenu {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  border-radius: 15px;
-  background-color: #ffffff;
-  z-index: 1;
-}
-.nav-container .nav-menu > li .nav-submenu-container .nav-submenu > li > a {
-  background-color: #ffffff;
-  color: #eb6d16;
-  padding: 1rem 1.5rem;
-  white-space: nowrap;
+.nav-container .nav-menu-wrapper .nav-menu > li .nav-submenu-container .nav-submenu > li > a {
   display: block;
-  border-radius: 15px;
-  transition: color 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 1, 1);
-}
-.nav-container .nav-menu > li .nav-submenu-container .nav-submenu > li > a:hover {
-  background-color: #eb6d16;
   color: #ffffff;
-  transition: color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
+  margin-bottom: 0.5rem;
 }
-.nav-container .nav-menu > li:hover > a {
+@media (min-width: 768px) {
+  .nav-container .nav-menu-wrapper .nav-menu > li .nav-submenu-container .nav-submenu > li > a {
+    background-color: #ffffff;
+    color: #eb6d16;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0;
+    white-space: nowrap;
+    border-radius: 15px;
+    transition: color 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 1, 1);
+  }
+  .nav-container .nav-menu-wrapper .nav-menu > li .nav-submenu-container .nav-submenu > li > a:hover {
+    background-color: #eb6d16;
+    color: #ffffff;
+    transition: color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+.nav-container .nav-menu-wrapper .nav-menu > li.active > a {
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+.nav-container .nav-menu-wrapper .nav-menu > li:hover > a {
   background-color: #eb6d16;
   color: #ffffff;
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
 @media (min-width: 768px) {
-  .nav-container .nav-menu > li:hover .nav-submenu-container {
+  .nav-container .nav-menu-wrapper .nav-menu > li:hover .nav-submenu-container {
     opacity: 1;
     padding-top: 1rem;
     transform: scaleY(1);
@@ -10941,9 +11000,13 @@ video {
 .nav-container.mobile-nav-open .nav-toggle .nav-toggle-icons .nav-close-icon {
   opacity: 1;
 }
-.nav-container.mobile-nav-open .nav-menu {
+.nav-container.mobile-nav-open .nav-menu-wrapper {
   bottom: 0;
-  transition: bottom 0.2s cubic-bezier(0, 0, 0.2, 1);
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+.header-scrolled .nav-container.mobile-nav-open .nav-menu-wrapper {
+  top: 60px;
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, bottom 0.2s cubic-bezier(0.4, 0, 1, 1);
 }
 
 html,
@@ -11325,10 +11388,6 @@ footer .social-links .social-link:hover {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .blur {
