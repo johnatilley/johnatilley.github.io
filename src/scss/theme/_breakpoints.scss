@@ -1,11 +1,14 @@
 // There are the default tailwin break points. They should be overwritten in a _screens.scss file
 $breakpoints: (
-    'sm': 640px,
-    'md': 768px,
-    'lg': 1024px,
-    'xl': 1280px,
-    '2xl': 1536px,
-) !default;
+    "sm": 640px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "2xl": 1536px,
+    ) !default;
+
+$breakpoint-list: map-keys($breakpoints
+);
 
 /**
  * You can add breakpoints to your sass using the mixin below like this
@@ -17,17 +20,45 @@ $breakpoints: (
  * The available breakpoints are found in the $breakpoints array above. This can be overriden with
  * a custom $breakpoint array.
  */
-@mixin breakpoint($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        // Prints a media query based on the value
-        @media (min-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
-    }
+@mixin breakpoint($values...) {
+    @for $i from 1 through length($values) {
+        $value: nth($values, $i);
+        $breakpoint: nth($value, 1);
+        $index: index($breakpoint-list, $breakpoint);
+        $next-breakpoint: if($index + 1 <=length($breakpoint-list), nth(map-keys($breakpoints), $index + 1), null);
+        $dir: if(length($value) > 1, nth($value, 2), up);
 
-    // If the key doesn't exist in the map
-    @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+        @if map-has-key($breakpoints, $breakpoint) {
+            @if $dir =="down" {
+                @if $next-breakpoint !=null {
+                    @media (max-width: map-get($breakpoints, $next-breakpoint) - 1px) {
+                        @content;
+                    }
+                }
+
+                // If there is no next breakpoint then we are at the largest breakpoint and the content is valid for all breakpoints
+                @else {
+                    @content;
+                }
+
+            }
+
+            @else if $dir =="only" and $next-breakpoint !=null {
+                @media (min-width: map-get($breakpoints, $breakpoint)) and (max-width: map-get($breakpoints, $next-breakpoint) - 1px) {
+                    @content;
+                }
+            }
+
+            @else {
+                @media (min-width: map-get($breakpoints, $breakpoint)) {
+                    @content;
+                }
+            }
+        }
+
+        @else {
+            @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`.";
+        }
+
     }
 }
