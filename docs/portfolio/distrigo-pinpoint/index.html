@@ -61,7 +61,7 @@
                 <li >
                     <a href="/portfolio/">Portfolio</a><div class="nav-submenu-container">
                             <ul class="nav-submenu">
-                                    <li>
+                                    <li class="my-active-class">
                                         <a href="/portfolio/distrigo-pinpoint/">Distrigo Pinpoint</a>
                                     </li>
                                 
@@ -98,7 +98,7 @@
                                     </li>
                                 </ul>
                         </div></li>
-                <li class="active">
+                <li >
                     <a href="/contact/">Contact</a></li>
                 <li >
                     <a href="/career/">Career</a></li>
@@ -122,46 +122,133 @@
                 <main>
                     <div class="main-container">
                         
-<div class="panel pageclip-form-wrapper">
-    <form action="https://send.pageclip.co/zWg2ENA4IUMQw6lZUlyODgebgDDkzJ6e" class="pageclip-form" method="post">
-        <div class="pageclip-form-inner">
-            <div>
-                <h1>Contact John Tilley</h1>
-                
+<div class="grid md:grid-cols-2 gap-4 md:gap-8">
+    <div class="panel mb-0">
+        <h1>Distrigo Pinpoint</h1>
+        
 <ol class="flex gap-2 mb-4">
     <li>
         <a class="underline" href="/">Home</a>
     </li>
     
+        <li>&gt;</li>
+        <li>
+            <a class="underline" href="/portfolio/">Portfolio</a>
+        </li>
+    
     <li>&gt;</li>
-    <li>Contact</li>
+    <li>Distrigo Pinpoint</li>
 </ol>
-                <p>Let's talk about your next project! Please send me a message using the form below</p>
-            </div>
+        <table>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Client</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>Stellantis</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Website</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>distrigoparts.co.uk</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Framework</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>React with Mapbox GL JS integration</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Developed by</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>April Six (www.aprilsix.com)</p>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="body" placeholder="Your message"></textarea>
+    <div class="panel mb-0">
+        <img src="/images/portfolio/logo/aprilsix-logo.png" alt="Distrigo Pinpoint" class="w-full">
+    </div>
 
-            <div class="pageclip-form-group">
-                <label>
-                    <strong>What is your project?</strong>
-                </label>
-                <label htmlFor="ecommerce"><input type="checkbox" name="project[ecommerce]" id="ecommerce" />
-                    Online shopping / Ecommerce</label>
-                <label htmlFor="ecommerce"><input type="checkbox" name="project[ecommerce]" id="ecommerce" />
-                    Booking system</label>
-                <label htmlFor="wordpress"><input type="checkbox" name="project[wordpress]" id="wordpress" />
-                    Wordpress</label>
-                <label htmlFor="other"><input type="checkbox" name="project[other]" id="other" />
-                    Other</label>
-            </div>
-
-            <button type="submit" class="pageclip-form__submit">
-                <span>Send</span>
-            </button>
+    
+        <div class="panel md:col-span-2 mb-0">
+            
+            <h2>Project Description</h2>
+            
+                <p>I enjoyed my time at April Six as a senior developer. I worked on a number of projects but my favourite was a mapping system called pinpoint that allowed the client, Stellantis (previously PSA Group), to have a geographic overview of where their customers were located.</p>
+            
+                <p>Pinpoint is a tool for Distrigo&#39;s sales team to help them discover areas where the may be potential new customers and also identify the best locations where they can focus on existing clients.</p>
+            
+                <p>The tool uses Mapbox GL JS to display the data on a map and a lot of the work was focused on improving the rendering performance of the system as well as cleaning up the user inferface.</p>
+            
+            
+                <img src="/images/portfolio/pinpoint-1.png" alt="Distrigo Pinpoint" class="w-auto max-w-4xl mx-auto mb-4 shadow-xl">
+            
         </div>
-    </form>
+    
+
+    
+        <div class="panel md:col-span-2 mb-0">
+            <h2>Key Features</h2>
+            
+                
+                    <h3>Pinpoint design changes</h3>
+                
+                
+                    <p>This is a screenshot of the website before. Here you can see the map is very cluttered and the user has to close the filter menu to see the information they need to see. The information panel overlaps the filter panel making each one difficult to use. The information panel also takes up a lot of empty space. With the panels open the map becomes less usable.</p>
+                
+                
+                    <img src="/images/portfolio/pinpoint-2.png" alt="Pinpoint design changes"
+                        class="w-auto max-w-4xl mx-auto mb-4 shadow-xl">
+                
+                
+            
+                
+                
+                    <p>Here is the result of all the changes. The map is now a lot more user friendly and the user can now see the information they need to see without having to close the filer menu. The information panel only uses up the space it needs and the buttons at the bottom are much more apparent.</p>
+                
+                
+                    <img src="/images/portfolio/pinpoint-3.png" alt=""
+                        class="w-auto max-w-4xl mx-auto mb-4 shadow-xl">
+                
+                
+            
+                
+                    <h3>Clustered data</h3>
+                
+                
+                    <p>The map now clusters the data so that the user can see the data in a more manageable way. The user can also zoom in and see the data in more detail. Whilst the pins are useful for seeing an overview of where Distrigo&#39;s customers are the cluster view gives a clear snap shot of the best areas to focus in on.</p>
+                
+                
+                    <img src="/images/portfolio/pinpoint-4.png" alt="Clustered data"
+                        class="w-auto max-w-4xl mx-auto mb-4 shadow-xl">
+                
+                
+            
+        </div>
+    
+
+    <a href="/contact" class="panel md:col-span-2 contact-link">
+        <p class="text-center text-2xl">Like what you see? <strong>Let's talk!</strong>
+        </p>
+    </a>
 </div>
                     </div>
                 </main>

@@ -53,14 +53,14 @@
     {% if portfolio.description %}
         <div class="panel md:col-span-2 mb-0">
             {% if portfolio.image_right %}
-                <img src="{{ portfolio.image_right }}" alt="{{ portfolio.title }}" class="w-full md:w-1/3 md:float-right md:ml-4">
+                <img src="{{ portfolio.image_right }}" alt="{{ portfolio.title }}" class="w-full md:w-1/3 md:float-right md:ml-4 shadow-xl">
             {% endif %}
             <h2>Project Description</h2>
             {% for paragraph in portfolio.description %}
                 <p>{{ paragraph }}</p>
             {% endfor %}
             {% if portfolio.image_bottom %}
-                <img src="{{ portfolio.image_bottom }}" alt="{{ portfolio.title }}" class="w-auto mx-auto">
+                <img src="{{ portfolio.image_bottom }}" alt="{{ portfolio.title }}" class="w-auto max-w-4xl mx-auto mb-4 shadow-xl">
             {% endif %}
         </div>
     {% endif %}
@@ -77,12 +77,12 @@
                 {% endfor %}
                 {% if feature.image %}
                     <img src="{{ feature.image }}" alt="{{ feature.title }}"
-                        class="{{ feature.image_class if feature.image_class else 'w-auto mx-auto'  }}">
+                        class="{{ feature.image_class if feature.image_class else 'w-auto max-w-4xl mx-auto mb-4 shadow-xl'  }}">
                 {% endif %}
                 {% if feature.images %}
                     {% for feature_image in feature.images %}
                         <img src="{{ feature_image.image }}" alt="{{ title }}"
-                            class="{{ feature_image.image_class if feature_image.image_class else 'w-auto mx-auto'  }}">
+                            class="{{ feature_image.image_class if feature_image.image_class else 'w-auto max-w-4xl mx-auto mb-4 shadow-xl'  }}">
                     {% endfor %}
                 {% endif %}
             {% endfor %}
