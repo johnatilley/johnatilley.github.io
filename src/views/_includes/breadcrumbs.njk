@@ -1,0 +1,14 @@
+{% set crumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
+<ol class="flex gap-2 mb-4">
+    <li>
+        <a class="underline" href="/">Home</a>
+    </li>
+    {% for crumb in crumbs %}
+        <li>&gt;</li>
+        <li>
+            <a class="underline" href="{{ crumb.url | url }}">{{ crumb.title }}</a>
+        </li>
+    {% endfor %}
+    <li>&gt;</li>
+    <li>{{ eleventyNavigation.key }}</li>
+</ol>

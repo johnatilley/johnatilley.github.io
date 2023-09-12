@@ -1,5 +1,5 @@
 .panel {
-    @apply shadow-xl;
+    box-shadow: 0 -3px 30px -7px rgb(0 0 0 / 0.07), 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     padding: 1rem;
     border-radius: 15px;
     background-color: $color-white;
