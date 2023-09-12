@@ -60,7 +60,7 @@
                 <p>{{ paragraph }}</p>
             {% endfor %}
             {% if portfolio.image_bottom %}
-                <img src="{{ portfolio.image_bottom }}" alt="{{ portfolio.title }}" class="w-auto max-w-4xl mx-auto mb-4 shadow-xl">
+                <img src="{{ portfolio.image_bottom }}" alt="{{ portfolio.title }}" class="w-4xl mx-auto mb-4 shadow-xl">
             {% endif %}
         </div>
     {% endif %}
@@ -77,12 +77,12 @@
                 {% endfor %}
                 {% if feature.image %}
                     <img src="{{ feature.image }}" alt="{{ feature.title }}"
-                        class="{{ feature.image_class if feature.image_class else 'w-auto max-w-4xl mx-auto mb-4 shadow-xl'  }}">
+                        class="{{ feature.image_class if feature.image_class else 'w-4xl mx-auto mb-4 shadow-xl'  }}">
                 {% endif %}
                 {% if feature.images %}
                     {% for feature_image in feature.images %}
                         <img src="{{ feature_image.image }}" alt="{{ title }}"
-                            class="{{ feature_image.image_class if feature_image.image_class else 'w-auto max-w-4xl mx-auto mb-4 shadow-xl'  }}">
+                            class="{{ feature_image.image_class if feature_image.image_class else 'w-4xl mx-auto mb-4 shadow-xl'  }}">
                     {% endfor %}
                 {% endif %}
             {% endfor %}
