@@ -7,10 +7,30 @@ description: John Tilley Web Development Portfolio
 eleventyNavigation:
     key: Hope Fashion
     parent: Portfolio
-    order: 2
+    order: 7
+    image: /images/portfolio/logo/hope-logo.png
+
+portfolio:
+    image: /images/portfolio/folk-logo.png
+    title: Hope Fashion
+    client: Hope Fashion
+    website: www.hopefashion.co.uk
+    framework: Magento
+    developer: Folk Digital
+    image_right: /images/portfolio/hope-1.png
+    description:
+        -   Hope Fashion is a start up business that we worked on in 2015. The sales concept is the Independent Sales Rep model with the integrated online ecommerce available for instant sales. The Magento had to be extended to allow this system and we achieved this via the use of Customer Affiliates modules. Essentially a Rep (or Stylist) is a special customer type that can make referrals for customers to the site and receive commission.
+    features:
+        -   title: Stylist Section
+            images:
+                -   image: /images/portfolio/hope-2.png
+                -   image: /images/portfolio/hope-3.png
+                    image_class: "w-2/3 mx-auto"
+            description:
+                -   In order to meet the goals of the business the online store needed a way to recruit sales reps and provide them with a way to manage their hosted sales parties and commissions. The sign up system requires applicants to submit information and a CV to the administrators who can then approve or decline those applicants. Approved Stylists are then instantly able to utilise their stylist account including making a Public Profile that would appear on the site.
+        -   image: /images/portfolio/hope-4.png
+            description:
+                -   For the system to work you wouldn’t be able to blindly fire applications to the backend as the stylist and customer accounts share the same space. A user journey had to be created. When the applicant first expresses their desire to become a stylist they are first checked to see if they already have an account, if not then they would be sent to the registration page. However normally the registration page would send them to their account upon submission but the flow of the application process has to be maintained instead. Finally if a user was already logged into their account they simply get sent straight to the last step to submit their CV.
 ---
 
-<div class="panel">
-    <h1>Portfolio</h1>
-    <p>Here's a list of my work</p>
-</div>
+{% include "portfolio.njk" %}

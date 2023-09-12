@@ -7,10 +7,30 @@ description: John Tilley Web Development Portfolio
 eleventyNavigation:
     key: Prantl
     parent: Portfolio
-    order: 2
+    order: 4
+    image: /images/portfolio/logo/prantl-logo.png
+
+portfolio:
+    image: /images/portfolio/jtfwd-logo.png
+    title: Prantl
+    client: Prantl
+    website: www.prantl.de
+    framework: Magento with internationalisation and bespoke product configurator
+    developer: John Tilley Freelance Web Development
+    description:
+        -   Prantl is a bespoke stationery website based in Germany. When taking on this website the requirements were to do some functionality fixes as well as taking their integrated wordpress blog and making it multisite to cater for the two languages the website is in.
+        -   The website came with a built-in product customiser. This has had to be reverse engineered as we are improving the functionality, making it available to mobile users and allowing more colours to be selected.
+    features:
+        -   title: Intermediate page
+            image: /images/portfolio/prantl-1.png
+            image_class: w-full md:w-1/2 mx-auto
+            description:
+                -   I was commissioned to create a step after adding a product to the shopping basket. This step would display cross-sell products to the customer, asking if they would also like to add one of them to their cart. It reuses the recommended products feature within default Magento.
+        -   title: Card Configurator
+            image: /images/portfolio/prantl-2.png
+            image_class: w-full md:w-1/2 mx-auto
+            description:
+                -   This is the main feature of the website that was produced by a previous developer. Currently the configurator resides within a popup window and is impossible to use on mobile devices. The aim of further development is to make it available to these device users and expand the functionality to allow for multi-colour digital printing in addition to their mono-coloured litho printing.
 ---
 
-<div class="panel">
-    <h1>Portfolio</h1>
-    <p>Here's a list of my work</p>
-</div>
+{% include "portfolio.njk" %}

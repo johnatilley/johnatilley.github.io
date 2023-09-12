@@ -1,0 +1,43 @@
+---
+layout: "base.njk"
+title: "John Tilley | Contact"
+bodyClass: home
+description: John Tilley Web Development Career
+
+eleventyNavigation:
+    key: Contact
+    order: 3
+---
+
+<div class="panel pageclip-form-wrapper">
+    <form action="https://send.pageclip.co/zWg2ENA4IUMQw6lZUlyODgebgDDkzJ6e" class="pageclip-form" method="post">
+        <div class="pageclip-form-inner">
+            <div>
+                <h1>Contact John Tilley</h1>
+                <p>Let's talk about your next project! Please send me a message using the form below</p>
+            </div>
+
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="body" placeholder="Your message"></textarea>
+
+            <div class="pageclip-form-group">
+                <label>
+                    <strong>What is your project?</strong>
+                </label>
+                <label htmlFor="ecommerce"><input type="checkbox" name="project[ecommerce]" id="ecommerce" />
+                    Online shopping / Ecommerce</label>
+                <label htmlFor="ecommerce"><input type="checkbox" name="project[ecommerce]" id="ecommerce" />
+                    Booking system</label>
+                <label htmlFor="wordpress"><input type="checkbox" name="project[wordpress]" id="wordpress" />
+                    Wordpress</label>
+                <label htmlFor="other"><input type="checkbox" name="project[other]" id="other" />
+                    Other</label>
+            </div>
+
+            <button type="submit" class="pageclip-form__submit">
+                <span>Send</span>
+            </button>
+        </div>
+    </form>
+</div>

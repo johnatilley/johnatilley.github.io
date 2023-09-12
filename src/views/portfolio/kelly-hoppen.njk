@@ -7,10 +7,26 @@ description: John Tilley Web Development Portfolio
 eleventyNavigation:
     key: Kelly Hoppen
     parent: Portfolio
-    order: 2
+    order: 6
+    image: /images/portfolio/logo/kelly-hoppen-logo.png
+
+portfolio:
+    image: /images/portfolio/folk-logo.png
+    title: Kelly Hoppen
+    client: Kelly Hoppen
+    website: www.kellyhoppen.com
+    framework: Magento with shoppable videos
+    developer: Folk Digital
+    image_right: /images/portfolio/kelly-hoppen-1.png
+    description:
+        -   Kelly Hoppen is an Interior Designer from South Africa who made her name doing designs for famous celebrities such as David & Victoria Beckham. We started work on her website in 2013 and had it launched at the start of 2014. The website was an early responsive web design build that doesn’t take advantage of a CSS framework like bootstrap or foundation. This means that everything had to be custom built for desktop and mobile from scratch.
+        -   The site is unusual for being designed in a vertical manner. The navigation is in a sidebar with a fixed width, which is quite strange in the responsive paradigm. The panels for homepage blocks and products are done in blocks so that each had a height and width that matched the other. Originally however the system allows for images of different heights allowing the admins to make interesting patterns with their product listing pages.
+    features:
+        -   title: Shoppable Video
+            image: /images/portfolio/kelly-hoppen-2.png
+            description:
+                -   One of the biggest parts of the website is the Art of Home section. This is essentially a blog that focuses on Video giving advice and suggestions on what makes good interior design. Part of the system behind this is the ability to assign products from Magento to a video and have those products display at a particular time. The video pauses when a product is hovered over and the customer can even add to the bag straight away.
+                -   Kelly Hoppen is an active investor who appeared on the BBC TV programme Dragon’s Den. She was once presented with a system for shoppable videos to which she responded by saying she had a Digital Agency in the south working on such a system, that was us.
 ---
 
-<div class="panel">
-    <h1>Portfolio</h1>
-    <p>Here's a list of my work</p>
-</div>
+{% include "portfolio.njk" %}

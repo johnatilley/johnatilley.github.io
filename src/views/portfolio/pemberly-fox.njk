@@ -7,10 +7,20 @@ description: John Tilley Web Development Portfolio
 eleventyNavigation:
     key: Pemberly Fox
     parent: Portfolio
-    order: 2
+    order: 3
+    image: /images/portfolio/logo/pemberly-fox-logo.png
+
+portfolio:
+    image: /images/portfolio/jtfwd-logo.png
+    title: Pemberly Fox
+    client: Pemberly Fox
+    website: www.pemberlyfox.com
+    framework: Magento
+    developer: John Tilley Freelance Web Development
+    image_bottom: /images/portfolio/pemberly-fox.png
+    description:
+        -   Pemberly Fox is a service for bespoke stationery. When I took the website on it needed serious work on correcting features such as the product filtering. It appeared that the website had a version upgrade instead of a straight forward patch. This caused some custom modules (in this case Manadev Layered Navigation) to cease functioning.
+        -   In addition to cleaning up some of the styling of the website, one of my main tasks was to improve the optimisation of the website. Using GTMetrix as the baseline we took the website from an E&F score up to an A&B score with the A score achieving 100% as of this writing
 ---
 
-<div class="panel">
-    <h1>Portfolio</h1>
-    <p>Here's a list of my work</p>
-</div>
+{% include "portfolio.njk" %}

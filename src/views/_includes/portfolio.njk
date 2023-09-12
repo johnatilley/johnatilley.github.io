@@ -1,0 +1,95 @@
+<div class="grid md:grid-cols-2 gap-4 md:gap-8">
+    <div class="panel mb-0">
+        <h1>{{ portfolio.title }}</h1>
+        <table>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Client</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>{{ portfolio.client }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Website</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>{{ portfolio.website }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Framework</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>{{ portfolio.framework }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <strong class="mr-2">Developed by</strong>
+                    </p>
+                </td>
+                <td>
+                    <p>{{ portfolio.developer }}</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="panel mb-0">
+        <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" class="w-full">
+    </div>
+
+    {% if portfolio.description %}
+        <div class="panel md:col-span-2 mb-0">
+            {% if portfolio.image_right %}
+                <img src="{{ portfolio.image_right }}" alt="{{ portfolio.title }}" class="w-full md:w-1/3 md:float-right md:ml-4">
+            {% endif %}
+            <h2>Project Description</h2>
+            {% for paragraph in portfolio.description %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+            {% if portfolio.image_bottom %}
+                <img src="{{ portfolio.image_bottom }}" alt="{{ portfolio.title }}" class="w-auto mx-auto">
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% if portfolio.features %}
+        <div class="panel md:col-span-2 mb-0">
+            <h2>Key Features</h2>
+            {% for feature in portfolio.features %}
+                {% if feature.title %}
+                    <h3>{{ feature.title }}</h3>
+                {% endif %}
+                {% for paragraph in feature.description %}
+                    <p>{{ paragraph }}</p>
+                {% endfor %}
+                {% if feature.image %}
+                    <img src="{{ feature.image }}" alt="{{ feature.title }}"
+                        class="{{ feature.image_class if feature.image_class else 'w-auto mx-auto'  }}">
+                {% endif %}
+                {% if feature.images %}
+                    {% for feature_image in feature.images %}
+                        <img src="{{ feature_image.image }}" alt="{{ title }}"
+                            class="{{ feature_image.image_class if feature_image.image_class else 'w-auto mx-auto'  }}">
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <a href="/contact" class="panel md:col-span-2 contact-link">
+        <p class="text-center text-2xl">Like what you see? <strong>Let's talk!</strong>
+        </p>
+    </a>
+</div>

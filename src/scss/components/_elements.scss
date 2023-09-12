@@ -1,7 +1,11 @@
 .panel {
     @apply shadow-xl;
-    padding: 16px;
+    padding: 1rem;
     border-radius: 15px;
     background-color: $color-white;
     margin-bottom: 2rem;
+
+    @include breakpoint(md) {
+        padding: 2rem;
+    }
 }

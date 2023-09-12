@@ -7,10 +7,29 @@ description: John Tilley Web Development Portfolio
 eleventyNavigation:
     key: Amanda Wakeley
     parent: Portfolio
-    order: 2
+    order: 5
+    image: /images/portfolio/logo/amanda-wakeley-logo.png
+
+portfolio:
+    image: /images/portfolio/folk-logo.png
+    title: Amanda Wakeley
+    client: Amanda Wakeley
+    website: www.amandawakeley.com
+    framework: Magento
+    developer: Folk Digital
+    image_bottom: /images/portfolio/amanda-wakeley-1.png
+    description:
+        -   Amanda Wakeley is a renowned Fashion Designer best known for evening and bridal dresses. The ecommerce website we built in 2016 was the last major project I worked on during my time at Folk Digital. The project went with the bold decision of putting the navigation in a vertical bar on the right hand side of the page. Something that people got so worried about it went through several iterations, nonetheless it met the requirement of ‘something different’ and the client was ultimately happy in the design as well as the implementation.
+        -   The client thought they wanted infinite scroll to be implemented on the site, whereas if you scroll down more ‘pages’ of products would be loaded onto the bottom. Instead of this it made more sense to suggest a system where all the products of a given category were loaded, but without the images, and then lazy load the images as the page is scrolled. As the category pages were Full Page Cached this system would be able to deliver all the product information instantly and the need to make multiple calls to the server repeatedly was extinguished, freeing up server resources.
+    features:
+        -   title: Three Step Checkout
+            description:
+                -   The availability of Checkout systems for Magento is quite limited. If you don’t want the default ‘One Page Checkout’ then your options are one of several iterations of ‘One Step Checkout’. The debate here is that depending on the brand, a One Step Checkout could be too much data overload for your customer.
+                -   The alternative is to use a multi step checkout system which is efficient but also breaks down the checkout steps for a more casual shopping experience. The checkout of choice is Three-step Checkout by EcommerceTeam and I would recommend this over any other system to anyone thinking about going online with their retail business.
+        -   title: Category Marketing Blocks
+            image: /images/portfolio/amanda-wakeley-2.png
+            description:
+                -   The website utilises IWD’s one step checkout, which fits the theme beautifully. A basic version of the checkout came with the Theme and with the requirement of adding in-store pick up to the system it was upgraded to the pro edition. The main challenge was to make sure the existing payment gateways continued to work on the new checkout.
 ---
 
-<div class="panel">
-    <h1>Portfolio</h1>
-    <p>Here's a list of my work</p>
-</div>
+{% include "portfolio.njk" %}

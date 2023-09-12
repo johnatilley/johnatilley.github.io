@@ -6,7 +6,7 @@ description: John Tilley Web Development Portfolio
 
 eleventyNavigation:
     key: Portfolio
-    order: 3
+    order: 2
 ---
 
 <div class="panel">
@@ -14,9 +14,10 @@ eleventyNavigation:
     <p>Some of the work I have done in the past</p>
 </div>
 
-<div class="panel">
-    <pre>
-    {% set navPages = collections.all | eleventyNavigation("Portfolio") %}
-    {{ navPages | dump(2) | safe }}
-    </pre>
+{% set navPages = collections.all | eleventyNavigation("Portfolio") %}
+
+<div class="grid md:grid-cols-2 gap-4 md:gap-8">
+    {% for navPage in navPages %}
+        <a href="{{ navPage.url }}" class="panel mb-0 portfolio-link" style="background-image: url({{ navPage.image }}); background-size: cover"></a>
+    {% endfor %}
 </div>

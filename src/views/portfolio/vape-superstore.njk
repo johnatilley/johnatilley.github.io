@@ -8,9 +8,29 @@ eleventyNavigation:
     key: Vape Superstore
     parent: Portfolio
     order: 2
+    image: /images/portfolio/logo/vape-superstore-logo.png
+
+portfolio:
+    image: /images/portfolio/jtfwd-logo.png
+    title: Vape Superstore
+    client: Easytek
+    website: www.vapesuperstore.co.uk
+    framework: Magento with Wordpress integration
+    developer: John Tilley Freelance Web Development
+    image_right: /images/portfolio/vape-superstore-1.png
+    image_bottom: /images/portfolio/vape-superstore-2.png
+    description:
+        -   Vape Superstore started up in 2016 with a store and integrated online shop. I inherited the website with the task of applying a theme from Theme Forest and adding bespoke styles. The Theme itself had some coding bugs which had to corrected but the final result is a beautiful looking website.
+        -   The deployment was a tricky task as we were effectively creating a new website with different content that would end up having all the customer and order data transferred to it along with reward points data.
+        -   All of this had to be done with a quick turn around, with the project starting in November 2016 and being live before Christmas, a wonderful gift for an online retailer.
+    features:
+        -   title: Elasticsearch
+            description:
+                -   The search function utilises Elasticsearch which is arguably one of the quickest search implementations available for Magento. Unfortunately we weren’t able to install the system directly on the web server but Elasticsearch does provide cloud hosted servers that we linked the search to.
+        -   title: One Step Checkout
+            image: /images/portfolio/vape-superstore-3.png
+            description:
+                -   The website utilises IWD’s one step checkout, which fits the theme beautifully. A basic version of the checkout came with the Theme and with the requirement of adding in-store pick up to the system it was upgraded to the pro edition. The main challenge was to make sure the existing payment gateways continued to work on the new checkout.
 ---
 
-<div class="panel">
-    <h1>Portfolio</h1>
-    <p>Here's a list of my work</p>
-</div>
+{% include "portfolio.njk" %}
