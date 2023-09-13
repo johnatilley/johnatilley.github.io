@@ -58,3 +58,13 @@ function heroParallax ( e ) {
     }
 
 }
+
+
+$( document ).ready( function () {
+    var form = document.querySelector( '.pageclip-form' );
+    if ( form ) {
+        Pageclip.form( form, {
+            successTemplate: "<span>Thank you for your message! I'll be in touch soon.</span>"
+        } );
+    }
+} );
