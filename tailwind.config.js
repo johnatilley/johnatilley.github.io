@@ -12,6 +12,10 @@ module.exports = {
             colors: {
                 "spanish-orange": "#EB6D16",
                 "charcoal": "#1F3A4C",
+                "honeydew": "#E2EFDE",
+                "dark-charcoal": "#294451",
+                "beige": "#F5F5DC",
+                "gunmetal": "#294451",
             },
             fontFamily: {
                 montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],

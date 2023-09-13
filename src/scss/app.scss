@@ -23,47 +23,17 @@
 @tailwind components;
 
 // Atomised elements. These cover html tags such as button, table etc
-@import "components/elements";
-// @import "components/accordion";
-// @import "components/buttons";
-// @import "components/hamburger";
+@import "components/panels";
+@import "components/buttons";
 @import "components/typography";
 
 // Layout components. These cover layout semantic divs such as header, footer, article, etc
 @import "views/navigation";
 @import "views/layout";
 @import "views/pageclip";
+@import "views/index";
 
 
 // Putting the tailwind utilities down here means we can use them as overrides for our set styles.
 // Utility classes are best used as small modifiers for the main theme
 @tailwind utilities;
-
-
-.test {
-    color: red;
-
-    @include breakpoint(sm) {
-        color: blue;
-    }
-
-    @include breakpoint(md down) {
-        color: green;
-    }
-
-    @include breakpoint(lg only) {
-        color: yellow;
-    }
-
-    @include breakpoint(xl up) {
-        color: purple;
-    }
-
-    @include breakpoint('2xl') {
-        color: orange;
-    }
-
-    @include breakpoint('2xl' down) {
-        color: pink;
-    }
-}

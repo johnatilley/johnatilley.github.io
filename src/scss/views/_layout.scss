@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    color: $color-gunmetal;
 }
 
 /* -------------------------------------------------------------- */
@@ -17,7 +18,7 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background: white;
+    background: $color-honeydew;
 }
 
 .site-container {
@@ -59,7 +60,7 @@ header {
         font-family: $font-rakkas;
         margin-left: 0;
         position: relative;
-        width: 180px;
+        width: 120px;
         display: block;
         overflow: hidden;
         transition: width 0.3s $motion-standard, margin-left 0.3s $motion-standard 0.1s;

@@ -1,0 +1,20 @@
+.hero-panel {
+    background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url('/images/background/orange-sky.jpg');
+    background-position: top center;
+    background-size: cover;
+    color: $color-white;
+    padding: 2rem;
+
+    p {
+        text-shadow: 0px 1px 4px rgb(0 0 0 / 0.6);
+    }
+
+    .hero-image {
+        filter: drop-shadow(0px 1px 4px rgb(0 0 0 / 0.4));
+    }
+
+
+    @include breakpoint(md) {
+        padding: 4rem;
+    }
+}
