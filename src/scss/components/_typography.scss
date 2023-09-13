@@ -26,28 +26,20 @@ h1 {
 }
 
 h2 {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
 
-    @include breakpoint(md) {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
+    @include breakpoint(md) {}
 }
 
 h3,
 h4,
 h5,
 h6 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-
-    @include breakpoint(md) {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-    }
 }
 
 p {
@@ -55,8 +47,6 @@ p {
     margin-bottom: 1.5rem;
     font-family: $font-paragraph;
     margin-top: 0;
-
-    @include breakpoint(md) {}
 
     // Last p-tags shouldn't interfere with padding and create gaps between modules
     &:last-child {
