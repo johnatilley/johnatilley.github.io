@@ -1,20 +1,37 @@
+$parallaxMovement: 0.015;
+
 .hero-panel {
-    background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url('/images/background/orange-sky.jpg');
-    background-position: top center;
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
     color: $color-white;
     padding: 2rem;
-
-    p {
-        text-shadow: 0px 1px 4px rgb(0 0 0 / 0.6);
-    }
-
-    .hero-image {
-        filter: drop-shadow(0px 1px 4px rgb(0 0 0 / 0.4));
-    }
-
+    --xDistance: 0px;
+    --yDistance: 0px;
 
     @include breakpoint(md) {
         padding: 4rem;
+    }
+
+    .hero-panel-background {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% - (var(--xDistance) * $parallaxMovement)), calc(-50% - (var(--yDistance) * $parallaxMovement)));
+        width: 110%;
+        max-width: none;
+    }
+
+    .hero-panel-content {
+        position: relative;
+        z-index: 2;
+
+        p {
+            text-shadow: 0px 1px 4px rgb(0 0 0 / 0.6);
+        }
+
+        .hero-image {
+            filter: drop-shadow(0px 1px 4px rgb(0 0 0 / 0.4));
+        }
     }
 }
