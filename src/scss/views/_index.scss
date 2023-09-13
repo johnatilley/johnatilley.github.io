@@ -18,8 +18,14 @@ $parallaxMovement: 0.015;
         top: 50%;
         left: 50%;
         transform: translate(calc(-50% - (var(--xDistance) * $parallaxMovement)), calc(-50% - (var(--yDistance) * $parallaxMovement)));
-        width: 110%;
+        width: auto;
+        height: 110%;
         max-width: none;
+
+        @include breakpoint(lg) {
+            width: 110%;
+            height: auto;
+        }
     }
 
     .hero-panel-content {
