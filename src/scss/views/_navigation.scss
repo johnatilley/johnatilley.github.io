@@ -141,6 +141,8 @@
     }
 
     .nav-toggle {
+        cursor: pointer;
+
         @include breakpoint(md) {
             display: none;
         }

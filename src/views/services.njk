@@ -9,14 +9,10 @@ eleventyNavigation:
     order: 1
 ---
 
-<div class="panel">
-    <h1>Services</h1>
-    <p>All the services. So many services.</p>
+<div class="panel lg:col-span-3 mb-0">
+    <h1>Web Development Services</h1>
+    {% include "breadcrumbs.njk" %}
+    <p>Whether you're a big business or a small startup, I can help you establish a strong online presence with a website that's tailored to your needs. From a simple static brochure website all the way up to a fully bespoke system that currently lives as an idea in your mind.</p>
 </div>
 
-<div class="panel">
-    <pre>
-    {% set navPages = collections.all | eleventyNavigation("Services") %}
-    {{ navPages | dump(2) | safe }}
-    </pre>
-</div>
+{% include "services-summary.njk" %}

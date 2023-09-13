@@ -38,33 +38,21 @@
                     <a href="/services/">Services</a><div class="nav-submenu-container">
                             <ul class="nav-submenu">
                                     <li>
-                                        <a href="/services/bespoke/">Bespoke web apps</a>
+                                        <a href="/services/brochure-website/">Static brochure website</a>
                                     </li>
                                 
                                     <li>
-                                        <a href="/services/ecommerce/">Online ecommerce shop</a>
+                                        <a href="/services/ecommerce-website/">Online e-commerce shop</a>
                                     </li>
                                 
                                     <li>
-                                        <a href="/services/booking/">Booking system</a>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="/services/wordpress/">Wordpress</a>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="/services/static/">Static multi page site</a>
+                                        <a href="/services/bespoke-software/">Bespoke web apps</a>
                                     </li>
                                 </ul>
                         </div></li>
                 <li >
                     <a href="/portfolio/">Portfolio</a><div class="nav-submenu-container">
                             <ul class="nav-submenu">
-                                    <li>
-                                        <a href="/portfolio/distrigo-pinpoint/">Distrigo Pinpoint</a>
-                                    </li>
-                                
                                     <li>
                                         <a href="/portfolio/anne-semonin/">Anne Semonin</a>
                                     </li>
@@ -74,11 +62,15 @@
                                     </li>
                                 
                                     <li>
+                                        <a href="/portfolio/prantl/">Prantl</a>
+                                    </li>
+                                
+                                    <li>
                                         <a href="/portfolio/pemberly-fox/">Pemberly Fox</a>
                                     </li>
                                 
                                     <li>
-                                        <a href="/portfolio/prantl/">Prantl</a>
+                                        <a href="/portfolio/distrigo-pinpoint/">Distrigo Pinpoint</a>
                                     </li>
                                 
                                     <li>
@@ -104,13 +96,13 @@
     </div>
 
     <div class="nav-toggle">
-        <button id="js-nav-toggle" class="flex items-center">
+        <a id="js-nav-toggle" class="flex items-center">
             <span class="mr-2 text-lg uppercase">Menu</span>
             <div class="nav-toggle-icons">
                 <i id="js-nav-open" class="nav-icon nav-open-icon fa-solid fa-bars fa-lg fa-fw"></i>
                 <i id="js-nav-close" class="nav-icon nav-close-icon fa-solid fa-close fa-lg fa-fw"></i>
             </div>
-        </button>
+        </a>
     </div>
 </nav>
     </div>
@@ -120,67 +112,52 @@
                 <main>
                     <div class="main-container">
                         
-<div class="panel">
-    <h1>Services</h1>
-    <p>All the services. So many services.</p>
+<div class="panel lg:col-span-3 mb-0">
+    <h1>Web Development Services</h1>
+    
+<ol class="flex gap-2 mb-4">
+    <li>
+        <a class="underline" href="/">Home</a>
+    </li>
+    
+    <li>&gt;</li>
+    <li>Services</li>
+</ol>
+    <p>Whether you're a big business or a small startup, I can help you establish a strong online presence with a website that's tailored to your needs. From a simple static brochure website all the way up to a fully bespoke system that currently lives as an idea in your mind.</p>
 </div>
 
-<div class="panel">
-    <pre>
-    
-    [
-  {
-    "key": "Bespoke web apps",
-    "parent": "Services",
-    "order": 1,
-    "url": "/services/bespoke/",
-    "pluginType": "eleventy-navigation",
-    "parentKey": "Services",
-    "title": "Bespoke web apps",
-    "children": []
-  },
-  {
-    "key": "Online ecommerce shop",
-    "parent": "Services",
-    "order": 2,
-    "url": "/services/ecommerce/",
-    "pluginType": "eleventy-navigation",
-    "parentKey": "Services",
-    "title": "Online ecommerce shop",
-    "children": []
-  },
-  {
-    "key": "Booking system",
-    "parent": "Services",
-    "order": 3,
-    "url": "/services/booking/",
-    "pluginType": "eleventy-navigation",
-    "parentKey": "Services",
-    "title": "Booking system",
-    "children": []
-  },
-  {
-    "key": "Wordpress",
-    "parent": "Services",
-    "order": 4,
-    "url": "/services/wordpress/",
-    "pluginType": "eleventy-navigation",
-    "parentKey": "Services",
-    "title": "Wordpress",
-    "children": []
-  },
-  {
-    "key": "Static multi page site",
-    "parent": "Services",
-    "order": 5,
-    "url": "/services/static/",
-    "pluginType": "eleventy-navigation",
-    "parentKey": "Services",
-    "title": "Static multi page site",
-    "children": []
-  }
-]
-    </pre>
+<div class="grid lg:grid-cols-3 gap-4 lg:gap-8 mb-8">
+    <div class="panel mb-0 text-center">
+        <div class="flex justify-center gap-8">
+            <img src="/images/services/11ty-logo.png" alt="11ty Websites" class="w-16 mb-8">
+            <img src="/images/services/wordpress-logo.png" alt="11ty Websites" class="w-16 mb-8">
+        </div>
+        <h3>Brochure website</h3>
+        <p>For businesses looking to establish or improve a basic online presence. A simple website to showcase your best work and help you attract new customers.</p>
+        <p>The two options I suggest are a Static website or a Wordpress website. Both of these options use fast, secure, and easy to maintain technologies.</p>
+        <a class="button" href="/services/brochure-website">Find out more</a>
+    </div>
+    <div class="panel mb-0 text-center">
+        <div class="flex justify-center gap-8">
+            <img src="/images/services/prestashop-logo.png" alt="11ty Websites" class="w-16 mb-8">
+            <img src="/images/services/woocommerce-logo.png" alt="11ty Websites" class="w-16 mb-8">
+        </div>
+        <h3>Online e-commerce shop</h3>
+        <p>For businesses looking to sell products online. I can help you set up an online shop that's easy to manage and secure for your customers.</p>
+        <p>There are many options for setting up an online shop. The technologies I recomend the most are Prestashop, or WooCommerce for Wordpress.</p>
+        <a class="button" href="/services/ecommerce-website">Find out more</a>
+    </div>
+    <div class="panel mb-0 text-center">
+        <div class="flex justify-center gap-8">
+            <img src="/images/services/laravel-logo.png" alt="11ty Websites" class="w-16 mb-8">
+            <img src="/images/services/nodejs-logo.png" alt="11ty Websites" class="w-16 mb-8">
+            <img src="/images/services/react-logo.png" alt="11ty Websites" class="w-16 mb-8">
+        </div>
+        <h3>Bespoke Software</h3>
+        <p>For businesses looking to create a bespoke software solution. I can help you create a custom website that's tailored to your needs.</p>
+        <p>There's no limit to the size of the project I can help you with. Whether you need a dating website or some custom internal tools for your operations team.</p>
+        <a class="button" href="/services/bespoke-software">Find out more</a>
+    </div>
 </div>
                     </div>
                 </main>

@@ -15,9 +15,4 @@ eleventyNavigation:
     <p>Here you can find some of the work I have done in the past. This mostly covers my time working in Digital Agencies. On each page you'll see whether the client belonged to an agency I worked for or a client I serviced as a freelancer.</p>
 </div>
 
-{% set navPages = collections.all | eleventyNavigation("Portfolio") %}
-<div class="grid md:grid-cols-2 gap-4 md:gap-8">
-    {% for navPage in navPages %}
-        <a href="{{ navPage.url }}" class="panel mb-0 portfolio-link" style="background-image: url({{ navPage.image }});"></a>
-    {% endfor %}
-</div>
+{% include "portfolio-summary.njk" %}

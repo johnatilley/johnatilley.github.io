@@ -1,0 +1,14 @@
+
+{% set navPages = collections.all | eleventyNavigation("Portfolio") %}
+<div class="grid md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-8">
+    {% for navPage in navPages %}
+        <a href="{{ navPage.url }}" class="panel mb-0 portfolio-link" style="background-image: url({{ navPage.image }});"></a>
+    {% endfor %}
+    {% if navPages.length % 2 != 0 %}
+        <a href="/contact" class="panel mb-0 portfolio-link odd-portfolio-link">
+            <div class="panel odd-portfolio-link-inner mb-0">
+                <p class="odd-portfolio-link-text">Your project here?</p>
+            </div>
+        </a>
+    {% endif %}
+</div>

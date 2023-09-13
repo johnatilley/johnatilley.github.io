@@ -4,22 +4,34 @@ title: "John Tilley Web Development"
 bodyClass: home
 description: John Tilley Web Development
 ---
-<div class="grid md:grid-cols-3 gap-4 md:gap-8">
-    <div class="panel md:col-span-3 mb-0 hero-panel">
-        <div class="max-w-full lg:w-6/12 mx-auto">
-            <p class="font-bold text-xl font-sans">Hello, this is</p>
-            <h1><img class="hero-image" src="/images/logo/logo-transparent-white.png" alt="John Tilley Web Development"></h1>
-            <p class="font-bold text-3xl font-sans">I'm a website developer who can turn your vision into a captivating website with expert consultancy for your online success.</p>
-        </div>
-    </div>
-
-    <div class="panel md:col-span-3 mb-0">
-        <h2>What I do</h2>
-        <p>If you're looking to bring your business online or enhance your digital presence, you've come to the right place. I'm a web developer with a passion for turning ideas into captivating, functional, and user-friendly websites. My expertise spans every facet of web development, and I specialize in making technology accessible to everyone, whether you're a seasoned entrepreneur or just starting your journey in the online world.</p>
-        <p>In a rapidly evolving digital landscape, having a strong online presence is essential, and I'm here to guide you through the process. With years of experience under my belt, I'm not only well-versed in the technical aspects of web development but also in providing valuable consultancy to individuals and businesses aiming to establish or expand their online footprint.</p>
-        <p>Together, we can transform your vision into a reality, leveraging the power of the internet to help your business thrive. So, whether you're looking for a seamless website, e-commerce solutions, or expert guidance on your online venture, I'm here to simplify the digital world for you. Let's embark on this journey together, making your online dreams a reality, one click at a time.</p>
-        <div class="flex justify-center">
-            <a class="button" href="/contact">Let's talk!</a>
-        </div>
+<div class="panel hero-panel">
+    <div class="max-w-full lg:w-6/12 mx-auto">
+        <p class="font-bold text-xl font-sans">Hello, this is</p>
+        <h1><img class="hero-image" src="/images/logo/logo-transparent-white.png" alt="John Tilley Web Development"></h1>
+        <p class="font-bold text-3xl font-sans">I'm a full stack website developer who can turn your vision into a captivating website.</p>
     </div>
 </div>
+
+<div class="panel">
+    <h2>What I do</h2>
+    <p>If you're looking to bring your business online or enhance your digital presence, you've come to the right place. I'm a web developer with a passion for turning ideas into captivating, functional, and user-friendly websites. My expertise spans every facet of web development, and I specialize in making technology accessible to everyone, whether you're a seasoned entrepreneur or just starting your journey in the online world.</p>
+    <p>In a rapidly evolving digital landscape, having a strong online presence is essential, and I'm here to guide you through the process. With years of experience under my belt, I'm not only well-versed in the technical aspects of web development but also in providing valuable consultancy to individuals and businesses aiming to establish or expand their online footprint.</p>
+    <p>Together, we can transform your vision into a reality, leveraging the power of the internet to help your business thrive. So, whether you're looking for a seamless website, e-commerce solutions, or expert guidance on your online venture, I'm here to simplify the digital world for you. Let's embark on this journey together, making your online dreams a reality, one click at a time.</p>
+    <div class="flex justify-center">
+        <a class="button" href="/contact">Let's talk!</a>
+    </div>
+</div>
+
+<div class="panel">
+    <h2>Web Development Services</h2>
+    <p>Whether you're a big business or a small startup, I can help you establish a strong online presence with a website that's tailored to your needs. From a simple static brochure website all the way up to a fully bespoke system that currently lives as an idea in your mind.</p>
+</div>
+
+{% include "services-summary.njk" %}
+
+<div class="panel">
+    <h2>Portfolio</h2>
+    <p>Here you can find some of the work I have done in the past. This mostly covers my time working in Digital Agencies. On each page you'll see whether the client belonged to an agency I worked for or a client I serviced as a freelancer.</p>
+</div>
+
+{% include "portfolio-summary.njk" %}
