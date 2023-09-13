@@ -28,13 +28,9 @@ function headerScrolled () {
 
 $( document ).ready( function () {
     var heroPanel = document.getElementById( "js-hero-panel" );
-    console.log( heroPanel );
     if ( heroPanel ) {
         window.addEventListener( "scroll", heroParallax );
         window.addEventListener( "mousemove", heroParallax );
-        console.log( "heroPanel exists" );
-    } else {
-        console.log( "heroPanel does not exist" );
     }
 } );
 
@@ -60,11 +56,9 @@ function heroParallax ( e ) {
 }
 
 
-$( document ).ready( function () {
-    var form = document.querySelector( '.pageclip-form' );
-    if ( form ) {
-        Pageclip.form( form, {
-            successTemplate: "<span>Thank you for your message! I'll be in touch soon.</span>"
-        } );
-    }
-} );
+var form = document.querySelector( '.pageclip-form' );
+if ( form ) {
+    Pageclip.form( form, {
+        successTemplate: "<span>Thank you for your message! I'll be in touch soon.</span>"
+    } );
+}
