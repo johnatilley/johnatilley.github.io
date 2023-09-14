@@ -1,19 +1,8 @@
-// // Initialize Firebase
-// var config = {
-//     apiKey: "AIzaSyD5bCyvYm5adElW2tllyfYH-CXnyQdUxVY",
-//     authDomain: "contactform-2086d.firebaseapp.com",
-//     databaseURL: "https://contactform-2086d.firebaseio.com",
-//     projectId: "contactform-2086d",
-//     storageBucket: "contactform-2086d.appspot.com",
-//     messagingSenderId: "35839015044"
-// };
-// firebase.initializeApp( config );
-
-// // Reference messages collection
-// var messagesRef = firebase.database().ref( 'messages' );
-
-// // Listen for form submit
-document.getElementById( 'contactForm' ).addEventListener( 'submit', submitForm );
+// Listen for form submit
+var contactForm = document.getElementById( 'contactForm' )
+if ( contactForm) {
+    contactForm.addEventListener( 'submit', submitForm );
+}
 
 // Submit form
 function submitForm ( e ) {
