@@ -44,8 +44,12 @@ function submitForm ( e ) {
             $( '.jt-form__submit' ).removeClass( 'loading' );
         } )
         .done( function ( result ) {
+            if (result.status === "success") {
+                $( '.jt-form__success-message' ).fadeIn();
+            } else {
+                alert("Message failed to send");
+            }
             $( '.jt-form__submit' ).removeClass( 'loading' );
-            $( '.jt-form__success-message' ).fadeIn();
         } )
 
     // Clear form
