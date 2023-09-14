@@ -9,37 +9,25 @@ eleventyNavigation:
     order: 3
 ---
 
-<div class="panel pageclip-form-wrapper">
-    <form action="https://send.pageclip.co/zWg2ENA4IUMQw6lZUlyODgebgDDkzJ6e" class="pageclip-form" method="post">
-        <div class="pageclip-form-inner">
+<div class="panel jt-form-wrapper">
+    <form action="/" class="jt-contact-form" id="contactForm" method="post">
+        <div class="jt-form-inner">
             <div>
                 <h1>Contact John Tilley</h1>
                 {% include "breadcrumbs.njk" %}
                 <p>Let's talk about your next project! Please send me a message using the form below</p>
             </div>
 
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Your email" required />
-            <input type="text" name="telephone" placeholder="Your telephone number (optional)" />
-            <textarea name="body" placeholder="Your message (optional)"></textarea>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <input type="email" id="email" name="email" placeholder="Your email" required />
+            <input type="text" id="company" name="company" placeholder="Your company name (optional)" />
+            <input type="text" id="phone" name="phone" placeholder="Your phone number (optional)" />
+            <textarea id="message" name="message" placeholder="Your message (optional)"></textarea>
 
-            <div class="pageclip-form-group">
-                <label class="mb-2">
-                    <strong>What is your project?</strong>
-                </label>
-                <label class="mb-2" htmlFor="ecommerce"><input type="checkbox" name="project[ecommerce]" id="ecommerce" />
-                    Online shopping / Ecommerce</label>
-                <label class="mb-2" htmlFor="Static"><input type="checkbox" name="project[static]" id="static" />
-                    Static website</label>
-                <label class="mb-2" htmlFor="wordpress"><input type="checkbox" name="project[wordpress]" id="wordpress" />
-                    Wordpress</label>
-                <label class="mb-2" htmlFor="bespoke"><input type="checkbox" name="project[bespoke]" id="bespoke" />
-                    Bespoke system</label>
-            </div>
-
-            <button type="submit" class="pageclip-form__submit">
-                <span>Send</span>
+            <button type="submit" class="jt-form__submit">
+                <span class="text">Send</span><span class="loading"><i class="fas fa-cog fa-spin"></i></span>
             </button>
+            <p class="jt-form__success-message">Thank you for your message. I'll be in touch soon!</p>
         </div>
     </form>
 </div>

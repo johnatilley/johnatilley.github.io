@@ -1,5 +1,6 @@
 
 $( document ).ready( function () {
+    // Mobile Nav
     $( "#js-nav-toggle" ).on( "click", function () {
         if ( $( "#js-nav-toggle-target" ).hasClass( "mobile-nav-open" ) ) {
             $( "#js-nav-toggle-target" ).removeClass( "mobile-nav-open" );
@@ -8,14 +9,22 @@ $( document ).ready( function () {
         }
     } );
 
-
+    // Page Scrolling
     $( window ).scroll( function () {
         headerScrolled();
     } );
 
     headerScrolled();
+
+    // Hero image parallax effect
+    var heroPanel = document.getElementById( "js-hero-panel" );
+    if ( heroPanel ) {
+        window.addEventListener( "scroll", heroParallax );
+        window.addEventListener( "mousemove", heroParallax );
+    }
 } );
 
+// Page Scrolling
 function headerScrolled () {
     if ( $( this ).scrollTop() >= 60 ) {
         $( "#js-header" ).addClass( "header-scrolled" );
@@ -25,15 +34,6 @@ function headerScrolled () {
 }
 
 // Hero image parallax effect
-
-$( document ).ready( function () {
-    var heroPanel = document.getElementById( "js-hero-panel" );
-    if ( heroPanel ) {
-        window.addEventListener( "scroll", heroParallax );
-        window.addEventListener( "mousemove", heroParallax );
-    }
-} );
-
 var mouseX = 0;
 var mouseY = 0;
 
@@ -52,13 +52,5 @@ function heroParallax ( e ) {
         heroPanel.style.setProperty( "--xDistance", xDistance + "px" );
         heroPanel.style.setProperty( "--yDistance", yDistance + "px" );
     }
-
 }
 
-
-var form = document.querySelector( '.pageclip-form' );
-if ( form ) {
-    Pageclip.form( form, {
-        successTemplate: "<span>Thank you for your message! I'll be in touch soon.</span>"
-    } );
-}

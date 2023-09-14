@@ -1,15 +1,15 @@
 /* -------------------------------------------------------------- */
-/* PAGE CLIP */
+/* JT Form */
 /* -------------------------------------------------------------- */
-.pageclip-form-wrapper {
-    .pageclip-form-inner {
+.jt-form-wrapper {
+    .jt-form-inner {
         display: flex;
         flex-direction: column;
         gap: 16px;
         position: relative;
         text-align: left;
 
-        .pageclip-form-group {
+        .jt-form-group {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -47,4 +47,28 @@
             }
         }
     }
+}
+
+.jt-form__submit {
+    .loading {
+        display: none;
+    }
+
+    &.loading {
+        .text {
+            display: none;
+        }
+        .loading {
+            display: block;
+        }
+    }
+}
+
+.jt-form__success-message {
+    text-align: center;
+    font-weight: 700;
+    color: $color-green-700;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    display: none;
 }
