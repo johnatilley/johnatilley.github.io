@@ -1,13 +1,13 @@
 button,
 .button,
-input[type=button],
-input[type=reset],
-input[type=submit] {
+[type=button],
+[type=reset],
+[type=submit] {
     display: inline-block;
     padding: 0.5rem 1rem;
     margin: 0;
     border-radius: 15px;
-    background: $color-spanish-orange;
+    background-color: $color-spanish-orange;
     color: $color-white;
     white-space: nowrap;
     font-weight: 700;
@@ -22,7 +22,7 @@ input[type=submit] {
     }
 
     &:hover {
-        transform: scale(1.01) translateY(-3px);
+        transform: scale(1.0005) translateY(-1px);
         transition: all 0.3s $motion-enter;
         box-shadow: 0 -3px 30px -7px rgb(0 0 0 / 0.1), 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
     }
